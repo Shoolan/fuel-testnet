@@ -13,11 +13,15 @@ sudo apt-get install git-all -y
 sudo apt-get install curl screen -y
 
 # Install Rust
-curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
-source "$HOME/.cargo/env"
-rustup install stable
-rustup update stable
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.cargo/env
 rustup default stable
+rustup update
+rustup update nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly
+
+snap install rustup 
+apt  install cargo
 ```
 
 <h1 align="center"> Install Fuel Toolchain </h1>
